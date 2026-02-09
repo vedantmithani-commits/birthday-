@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy birthday My Love</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #000;
+      color: #e6e6e6;
+      overflow-x: hidden;
+    }
+
+    /* Glitch Title */
+    .glitch {
+      font-family: monospace;
+      font-size: 42px;
+      color: #00ff66;
+      position: relative;
+      text-align: center;
+      margin-top: 80px;
+      animation: flicker 1.5s infinite;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      color: #00ff66;
+      background: transparent;
+    }
+
+    .glitch::before {
+      top: -2px;
+      animation: glitchTop 1s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      top: 2px;
+      animation: glitchBottom 1.2s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitchTop {
+      0% { clip-path: inset(0 0 80% 0); }
+      100% { clip-path: inset(0 0 20% 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip-path: inset(80% 0 0 0); }
+      100% { clip-path: inset(20% 0 0 0); }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+
+    /* Poem Container */
+    .container {
+      max-width: 750px;
+      margin: 120px auto 80px;
+      padding: 40px 25px;
+      line-height: 1.8;
+      font-size: 18px;
+      white-space: pre-line;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Floating Heart Balloons */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      color: rgba(255, 80, 120, 0.5);
+      animation: floatUp linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Title -->
+  <div class="glitch" data-text="Happy birthday My Love">
+    Happy birthday My Love
+  </div>
+
+  <!-- Poem (UNCHANGED) -->
+  <div class="container">
+i wanna hear your ravishing voice everytime i see you 
+it dosnet matter in the matter of voice rhat iseeyou 
+or i see you not your voice can make me feel you
+can make me need you
+can make me feel the gist and frisk the shit you 
+posses in yourself being honest i do mean it
+you’ve got love in your spirit 
+you’ve got beauty and that’s killing
+you’ve got the power to give hopes to a weakling 
+to a person who never wanted marriage life
+now wants a savage wife
+with some boldness cuteness 
+with some average height
+and thats so real
+you took all away my fear
+of sharing my insecurity 
+my that family issue no one can hear
+so lets cheer to your new age
+idontknow should i be sad for your few age ?
+thats been left or should i be happy you’ve got that grown age 
+fuck it ill be happy .
+jab tk tere chehre pe hasi tab tk mujhe koi aur chiz ki parwaah nahi .
+
+
+happiesttttt birthday loveeeeeeeeeee!! 
+i hope next year yeh din hum saathme banaayeeeeeeee
+  </div>
+
+  <!-- Heart Balloons Generator -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+      heart.style.fontSize = (16 + Math.random() * 24) + "px";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
+
